@@ -1,0 +1,10 @@
+# Old drafts of the site
+*.bak
+
+# Internal design notes, not part of the website
+DESIGN.md
+
+# Files Windows, OneDrive and editors create on their own
+desktop.ini
+Thumbs.db
+.vscode/

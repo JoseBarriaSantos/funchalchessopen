@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Funchal Chess Open - I Funchal Chess Open, 26 November to 2 December 2026, Centro Cultural e de Investigação do Funchal, Madeira, Portugal">
+  <title>Funchal Chess Open</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Source+Serif+4:opsz,wght@8..60,400&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="assets/tournament_logo_transparent.png">
+  <link rel="apple-touch-icon" href="assets/tournament_logo_transparent.png">
+  <link rel="stylesheet" href="css/style.css">
+  <script>
+    // Applied before paint to avoid a flash of the wrong theme
+    (function () {
+      try {
+        // Light is the default; dark only when the visitor has chosen it
+        if (localStorage.getItem('theme') === 'dark') {
+          document.documentElement.dataset.theme = 'dark';
+        }
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <button class="nav-brand" data-page="home" aria-label="Go to home">
+        <span class="brand-logo" aria-hidden="true"></span>
+        <div class="brand-text">
+          <span class="brand-full">Funchal Chess Open</span>
+        </div>
+      </button>
+
+      <ul class="nav-links" id="navLinks" role="list">
+        <li><button class="nav-link" data-page="home"     data-i18n="nav.home">Home</button></li>
+        <li><button class="nav-link" data-page="programme"   data-i18n="nav.events">Programme</button></li>
+        <li><button class="nav-link" data-page="regulations" data-i18n="nav.regulations">Regulations</button></li>
+        <li><button class="nav-link" data-page="contacts" data-i18n="nav.contacts">Contacts</button></li>
+        <li><button class="nav-link nav-register" data-page="registration" data-i18n="nav.register">Register</button></li>
+      </ul>
+
+      <div class="nav-right">
+        <div class="lang-toggle" role="group" aria-label="Language">
+          <button class="lang-btn" data-lang="pt">PT</button>
+          <span aria-hidden="true" class="lang-sep">|</span>
+          <button class="lang-btn" data-lang="en">EN</button>
+        </div>
+        <button class="theme-btn" id="themeToggle" data-i18n-aria="theme.toggle"
+                aria-label="Switch to dark theme" aria-pressed="false">
+          <span id="themeIcon" aria-hidden="true">☾</span>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main">
+
+    <!-- ═══════════════════════════════ HOME ═══════════════════════════════ -->
+    <div id="page-home" class="page active">
+
+      <header class="hero">
+        <div class="hero-chess-bg" aria-hidden="true"></div>
+        <div class="hero-overlay" aria-hidden="true"></div>
+        <div class="hero-logo-bg" aria-hidden="true"></div>
+        <div class="hero-content">
+          <h1 class="hero-title">
+            Funchal
+            <em class="hero-accent">Chess Open</em>
+          </h1>
+          <p class="hero-meta">
+            <span data-i18n="hero.dates_label">Dates</span>: <strong>26 Nov &ndash; 2 Dec 2026</strong>
+            <span class="meta-sep" aria-hidden="true">·</span>
+            <span data-i18n="hero.venue_label">Venue</span>: <strong data-i18n="hero.venue_val">Funchal, Madeira</strong>
+          </p>
+          <div class="hero-cta">
+            <button class="btn btn-primary" data-page="programme"       data-i18n="hero.cta_primary">View Programme</button>
+            <button class="btn btn-ghost" data-page="registration" data-i18n="hero.cta_secondary">Register Now</button>
+          </div>
+        </div>
+        <div class="hero-scroll-hint" aria-hidden="true">
+          <span class="scroll-line"></span>
+        </div>
+      </header>
+
+      <!-- Stats strip -->
+      <div class="stats-strip">
+        <div class="container">
+          <div class="stats-grid">
+            <div class="stat-item">
+              <strong class="stat-num">9</strong>
+              <span class="stat-label" data-i18n="stats.rounds">Rounds</span>
+            </div>
+            <div class="stat-divider" aria-hidden="true"></div>
+            <div class="stat-item">
+              <strong class="stat-num">7</strong>
+              <span class="stat-label" data-i18n="stats.days">Days</span>
+            </div>
+            <div class="stat-divider" aria-hidden="true"></div>
+            <div class="stat-item">
+              <strong class="stat-num">13000€</strong>
+              <span class="stat-label" data-i18n="stats.prizes">Prize Pool</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Events teaser -->
+      <section class="section events-teaser">
+        <div class="events-teaser-bg" aria-hidden="true"></div>
+        <div class="container">
+          <h2 class="section-title" data-i18n="teaser.title">Festival Events</h2>
+          <div class="programme-list">
+            <div class="programme-row" data-page="programme">
+              <span class="prog-num">01</span>
+              <div class="prog-body">
+                <h3 data-i18n="teaser.open_title">I Funchal Chess Open</h3>
+                <p data-i18n="teaser.open_desc">FIDE-rated open tournament welcoming players of all levels</p>
+              </div>
+              <span class="prog-date">26 Nov &ndash; 2 Dec</span>
+              <span class="prog-arrow" aria-hidden="true">→</span>
+            </div>
+            <div class="programme-row" data-page="programme">
+              <span class="prog-num">02</span>
+              <div class="prog-body">
+                <h3 data-i18n="teaser.dinner_title">Gala Dinner</h3>
+                <p data-i18n="teaser.dinner_desc">An evening of chess, food, and good company</p>
+              </div>
+              <span class="prog-date">TBD</span>
+              <span class="prog-arrow" aria-hidden="true">→</span>
+            </div>
+            <div class="programme-row" data-page="programme">
+              <span class="prog-num">03</span>
+              <div class="prog-body">
+                <h3 data-i18n="teaser.master_title">Masterclasses</h3>
+                <p data-i18n="teaser.master_desc">Sessions with top-level players - details to be announced</p>
+              </div>
+              <span class="prog-date">TBD</span>
+              <span class="prog-arrow" aria-hidden="true">→</span>
+            </div>
+          </div>
+          <div class="section-cta">
+            <button class="btn btn-ghost" data-page="programme" data-i18n="teaser.cta">See Full Programme</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Registration CTA -->
+      <section class="section reg-cta-section">
+        <div class="container">
+          <div class="reg-cta-inner">
+            <button class="btn btn-dark btn-large" data-page="registration" data-i18n="regcta.btn">Join the Festival!</button>
+          </div>
+        </div>
+      </section>
+
+    </div><!-- /page-home -->
+
+
+    <!-- ═══════════════════════════════ PROGRAMME ═══════════════════════════════ -->
+    <div id="page-programme" class="page">
+
+      <header class="page-hero">
+        <div class="page-hero-bg" aria-hidden="true"></div>
+        <div class="container">
+          <h1 data-i18n="events.title">Programme</h1>
+        </div>
+      </header>
+
+      <div class="section">
+        <div class="container">
+
+          <!-- Main Open -->
+          <article class="event-card" id="event-open">
+            <div class="event-card-header">
+              <div class="event-title-wrap">
+                <h2 data-i18n="events.open_title">I Funchal Chess Open</h2>
+              </div>
+            </div>
+            <div class="event-card-body">
+              <p data-i18n="events.open_desc">The flagship event of the festival - a FIDE-rated open tournament welcoming players of all nationalities and rating levels. Whether you are a seasoned grandmaster or an ambitious club player, this is your chance to compete on an international stage.</p>
+              <div class="event-details">
+                <div class="detail-item">
+                  <span class="detail-label" data-i18n="events.rounds_label">Rounds</span>
+                  <span class="detail-value">9</span>
+                </div>
+                <div class="detail-item">
+                  <span class="detail-label" data-i18n="events.tc_label">Time Control</span>
+                  <span class="detail-value">90 min + 30 s/move</span>
+                </div>
+                <div class="detail-item">
+                  <span class="detail-label" data-i18n="events.prizes_label">Prizes</span>
+                  <span class="detail-value">13 000 &euro;</span>
+                </div>
+                <div class="detail-item">
+                  <span class="detail-label" data-i18n="events.dates_label">Dates</span>
+                  <span class="detail-value">26 Nov &ndash; 2 Dec 2026</span>
+                </div>
+                <div class="detail-item">
+                  <span class="detail-label" data-i18n="events.venue_label">Venue</span>
+                  <span class="detail-value" data-i18n="events.venue_val">Centro Cultural e de Investigação do Funchal</span>
+                </div>
+              </div>
+
+
+              <h3 class="event-subtitle" data-i18n="events.sched_title">Schedule</h3>
+              <div class="fees-table" role="table" aria-label="Tournament schedule">
+                <div class="fee-row fee-header" role="row">
+                  <span role="columnheader" data-i18n="events.sched_day">Day</span>
+                  <span role="columnheader" data-i18n="events.sched_round">Round</span>
+                </div>
+              <div class="fee-row" role="row">
+                <span role="cell" data-i18n="events.sched_d1">26 November (Thursday)</span>
+                <span role="cell" data-i18n="events.sched_r1">Opening ceremony + Round 1</span>
+              </div>
+              <div class="fee-row" role="row">
+                <span role="cell" data-i18n="events.sched_d2">27 November (Friday)</span>
+                <span role="cell" data-i18n="events.sched_r2">Round 2</span>
+              </div>
+              <div class="fee-row" role="row">
+                <span role="cell" data-i18n="events.sched_d3">28 November (Saturday)</span>
+                <span role="cell" data-i18n="events.sched_r3">Round 3 + Round 4</span>
+              </div>
+              <div class="fee-row" role="row">
+                <span role="cell" data-i18n="events.sched_d4">29 November (Sunday)</span>
+                <span role="cell" data-i18n="events.sched_r4">Round 5</span>
+              </div>
+              <div class="fee-row" role="row">
+                <span role="cell" data-i18n="events.sched_d5">30 November (Monday)</span>
+                <span role="cell" data-i18n="events.sched_r5">Round 6</span>
+              </div>
+              <div class="fee-row" role="row">
+                <span role="cell" data-i18n="events.sched_d6">1 December (Tuesday)</span>
+                <span role="cell" data-i18n="events.sched_r6">Round 7 + Round 8</span>
+              </div>
+              <div class="fee-row" role="row">
+                <span role="cell" data-i18n="events.sched_d7">2 December (Wednesday)</span>
+                <span role="cell" data-i18n="events.sched_r7">Round 9 + Closing ceremony</span>
+              </div>
+              </div>
+
+              <h3 class="event-subtitle" data-i18n="events.prizes_title">Prize Fund</h3>
+              <div class="fees-table" role="table" aria-label="Prize fund">
+                <div class="fee-row fee-header" role="row">
+                  <span role="columnheader" data-i18n="events.prize_place">Placing</span>
+                  <span role="columnheader" data-i18n="events.prize_amount">Prize</span>
+                </div>
+              <div class="fee-row" role="row">
+                <span role="cell" data-i18n="events.prize_1">1st place</span>
+                <span role="cell" class="fee-amount">3700 €</span>
+              </div>
+              <div class="fee-row" role="row">
+                <span role="cell" data-i18n="events.prize_2">2nd place</span>
+                <span role="cell" class="fee-amount">2200 €</span>
+              </div>
+              <div class="fee-row" role="row">
+                <span role="cell" data-i18n="events.prize_3">3rd place</span>
+                <span role="cell" class="fee-amount">1700 €</span>
+              </div>
+              <div class="fee-row" role="row">
+                <span role="cell" data-i18n="events.prize_4">4th place</span>
+                <span role="cell" class="fee-amount">1200 €</span>
+              </div>
+              <div class="fee-row" role="row">
+                <span role="cell" data-i18n="events.prize_5">5th place</span>
+                <span role="cell" class="fee-amount">900 €</span>
+              </div>
+              <div class="fee-row" role="row">
+                <span role="cell" data-i18n="events.prize_6">6th place</span>
+                <span role="cell" class="fee-amount">700 €</span>
+              </div>
+              <div class="fee-row" role="row">
+                <span role="cell" data-i18n="events.prize_7">7th place</span>
+                <span role="cell" class="fee-amount">600 €</span>
+              </div>
+              <div class="fee-row" role="row">
+                <span role="cell" data-i18n="events.prize_8">8th place</span>
+                <span role="cell" class="fee-amount">450 €</span>
+              </div>
+              <div class="fee-row" role="row">
+                <span role="cell" data-i18n="events.prize_9">9th place</span>
+                <span role="cell" class="fee-amount">400 €</span>
+              </div>
+              <div class="fee-row" role="row">
+                <span role="cell" data-i18n="events.prize_10">10th place</span>
+                <span role="cell" class="fee-amount">300 €</span>
+              </div>
+              <div class="fee-row" role="row">
+                <span role="cell" data-i18n="events.prize_female">Best female player</span>
+                <span role="cell" class="fee-amount">250 €</span>
+              </div>
+              <div class="fee-row" role="row">
+                <span role="cell" data-i18n="events.prize_v50">Best veteran +50</span>
+                <span role="cell" class="fee-amount">225 €</span>
+              </div>
+              <div class="fee-row" role="row">
+                <span role="cell" data-i18n="events.prize_v65">Best veteran +65</span>
+                <span role="cell" class="fee-amount">225 €</span>
+              </div>
+              <div class="fee-row" role="row">
+                <span role="cell" data-i18n="events.prize_u18">Best junior U18</span>
+                <span role="cell" class="fee-amount">150 €</span>
+              </div>
+                <div class="fee-row fee-total" role="row">
+                  <span role="cell" data-i18n="events.prize_total">Total prize fund</span>
+                  <span role="cell" class="fee-amount">13 000 &euro;</span>
+                </div>
+              </div>
+
+              <div class="event-actions">
+                <button class="btn btn-primary"  data-page="registration" data-i18n="events.open_reg">Register for the Open</button>
+                <button class="btn btn-ghost" data-page="regulations"  data-i18n="events.open_rules">View Regulations</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Gala Dinner -->
+          <article class="event-card" id="event-dinner">
+            <div class="event-card-header">
+              <div class="event-title-wrap">
+                <h2 data-i18n="events.dinner_title">Chess Gala Dinner</h2>
+              </div>
+            </div>
+            <div class="event-card-body">
+              <p data-i18n="events.dinner_desc">Celebrate the spirit of chess with fellow players, organizers, and guests at our official gala dinner. A night of good food, great company, and shared passion for the game.</p>
+              <div class="event-details">
+                <div class="detail-item">
+                  <span class="detail-label" data-i18n="events.date_label">Date</span>
+                  <span class="detail-value">TBD</span>
+                </div>
+                <div class="detail-item">
+                  <span class="detail-label" data-i18n="events.venue_label">Venue</span>
+                  <span class="detail-value">Funchal</span>
+                </div>
+              </div>
+              <div class="event-actions">
+                <button class="btn btn-dark" data-page="registration" data-i18n="events.dinner_reg">Reserve a Seat</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Masterclasses -->
+          <article class="event-card" id="event-master">
+            <div class="event-card-header">
+              <div class="event-title-wrap">
+                <h2 data-i18n="events.master_title">Masterclasses</h2>
+              </div>
+            </div>
+            <div class="event-card-body">
+              <p data-i18n="events.master_desc">An opportunity to learn from top-level players in focused, intimate sessions. Instructors, topics, and schedule to be announced. Stay tuned for updates.</p>
+              <div class="event-details">
+                <div class="detail-item">
+                  <span class="detail-label" data-i18n="events.instructor_label">Instructor</span>
+                  <span class="detail-value">TBD</span>
+                </div>
+                <div class="detail-item">
+                  <span class="detail-label" data-i18n="events.schedule_label">Schedule</span>
+                  <span class="detail-value">TBD</span>
+                </div>
+              </div>
+              <div class="event-actions">
+                <button class="btn btn-ghost" data-page="contacts" data-i18n="events.master_interest">Express Interest</button>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </div><!-- /page-programme -->
+
+
+    <!-- ═══════════════════════════════ REGULATIONS ═══════════════════════════════ -->
+    <div id="page-regulations" class="page">
+
+      <header class="page-hero">
+        <div class="page-hero-bg" aria-hidden="true"></div>
+        <div class="container">
+          <h1 data-i18n="regs.title">Regulations</h1>
+        </div>
+      </header>
+
+      <div class="section">
+        <div class="container regs-container">
+          <div class="regs-downloads">
+            <h2 data-i18n="regs.dl_title">Download Regulations</h2>
+            <div class="download-grid">
+              <a class="btn-download" href="assets/funchal_chess_open_regulamento.pdf" download>
+                <span class="dl-lang">PT</span>
+                <span class="dl-info">
+                  <strong>Português</strong>
+                  <small>PDF &middot; 132 KB</small>
+                </span>
+              </a>
+              <a class="btn-download" href="assets/funchal_chess_open_regulations.pdf" download>
+                <span class="dl-lang">EN</span>
+                <span class="dl-info">
+                  <strong>English</strong>
+                  <small>PDF &middot; 131 KB</small>
+                </span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div><!-- /page-regulations -->
+
+    <!-- ═══════════════════════════════ CONTACTS ═══════════════════════════════ -->
+    <div id="page-contacts" class="page">
+
+      <header class="page-hero">
+        <div class="page-hero-bg" aria-hidden="true"></div>
+        <div class="container">
+          <h1 data-i18n="contacts.title">Contacts</h1>
+        </div>
+      </header>
+
+      <div class="section">
+        <div class="container">
+          <div class="contacts-layout">
+
+            <div class="contact-info-panel">
+              <h2 data-i18n="contacts.info_title">Contact Information</h2>
+
+              <div class="contact-item">
+                <span class="contact-icon" aria-hidden="true">✉</span>
+                <div class="contact-detail">
+                  <span class="contact-label" data-i18n="contacts.email_label">Email</span>
+                  <a href="mailto:festivaldexadrezdofunchal@gmail.com" class="contact-value">festivaldexadrezdofunchal@gmail.com</a>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <span class="contact-icon" aria-hidden="true">☎</span>
+                <div class="contact-detail">
+                  <span class="contact-label" data-i18n="contacts.phone_label">Phone</span>
+                  <span class="contact-value tbd-note">+351931962025</span>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <span class="contact-icon" aria-hidden="true">◈</span>
+                <div class="contact-detail">
+                  <span class="contact-label" data-i18n="contacts.org_label">Organisation</span>
+                  <span class="contact-value" data-i18n="contacts.org_val">Madeira Chess Association (AXRAM)</span>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <span class="contact-icon" aria-hidden="true">⌖</span>
+                <div class="contact-detail">
+                  <span class="contact-label" data-i18n="contacts.address_label">Playing Hall</span>
+                  <span class="contact-value" data-i18n="contacts.address_val">Centro Cultural e de Investigação do Funchal, Rua do Matadouro nº 4, 9050-100 Funchal</span>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div><!-- /page-contacts -->
+
+
+    <!-- ═══════════════════════════════ REGISTRATION ═══════════════════════════════ -->
+
+    <!-- ═══════════════════════════════ REGISTRATION ═══════════════════════════════ -->
+    <div id="page-registration" class="page">
+
+      <header class="page-hero">
+        <div class="page-hero-bg" aria-hidden="true"></div>
+        <div class="container">
+          <h1 data-i18n="reg.title">Registration</h1>
+        </div>
+      </header>
+
+      <div class="section">
+        <div class="container">
+
+          <!-- Fees -->
+          <div class="reg-block">
+            <h2 data-i18n="reg.fees_title">Registration Fees</h2>
+            <p class="reg-note" data-i18n="reg.fees_note">Entry fee for the I Funchal Chess Open. The amount depends on the date the payment is made.</p>
+            <div class="fees-table" role="table" aria-label="Registration fees">
+              <div class="fee-row fee-header" role="row">
+                <span role="columnheader" data-i18n="reg.col_category">Paid by</span>
+                <span role="columnheader" data-i18n="reg.col_fee">Fee</span>
+              </div>
+              <div class="fee-row" role="row">
+                <span role="cell" data-i18n="reg.fee_early">26 October</span>
+                <span role="cell" class="fee-amount">50 €</span>
+              </div>
+              <div class="fee-row" role="row">
+                <span role="cell" data-i18n="reg.fee_std">26 November</span>
+                <span role="cell" class="fee-amount">60 €</span>
+              </div>
+              <div class="fee-row" role="row">
+                <span role="cell" data-i18n="reg.fee_late">After 26 November</span>
+                <span role="cell" class="fee-amount">70 €</span>
+              </div>
+            </div>
+            <p class="fee-note" data-i18n="reg.fee_discount">Players resident in the Madeira region receive a 30% discount on the entry fee.</p>
+            <p class="fee-note" data-i18n="reg.fee_exempt">GMs, IMs and players rated above 2300 are exempt from the entry fee.</p>
+          </div>
+
+          <!-- How to register -->
+          <div class="reg-block">
+            <h2 data-i18n="reg.how_title">How to Register</h2>
+            <div class="steps-grid">
+              <div class="step">
+                <div class="step-num" aria-hidden="true">1</div>
+                <h3 data-i18n="reg.step1_title">Check your fee</h3>
+                <p data-i18n="reg.step1_desc">Find the fee that applies to you, taking into account the payment date, the Madeira residency discount, and the exemption for GMs, IMs and players rated above 2300.</p>
+              </div>
+              <div class="step">
+                <div class="step-num" aria-hidden="true">2</div>
+                <h3 data-i18n="reg.step2_title">Pay the entry fee</h3>
+                <p data-i18n="reg.step2_desc">Make the payment and keep the proof. Payment details (IBAN and accepted methods) will be published here shortly.</p>
+              </div>
+              <div class="step">
+                <div class="step-num" aria-hidden="true">3</div>
+                <h3 data-i18n="reg.step3_title">Send your registration email</h3>
+                <p data-i18n="reg.step3_desc">Email festivaldexadrezdofunchal@gmail.com with your name, your FIDE ID and the proof of payment. Your registration is confirmed only once all three are received.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Required info -->
+          <div class="reg-block">
+            <h2 data-i18n="reg.req_title">Required Information</h2>
+            <ul class="required-list">
+              <li data-i18n="reg.req_1">Full name</li>
+              <li data-i18n="reg.req_2">FIDE ID</li>
+              <li data-i18n="reg.req_3">Proof of payment</li>
+              <li data-i18n="reg.req_4">Federation and rating (if applicable)</li>
+              <li data-i18n="reg.req_5">Contact email address</li>
+            </ul>
+            <p class="reg-doc-note" data-i18n="reg.doc_note">Send everything in a single email to festivaldexadrezdofunchal@gmail.com. The organisation reserves the right of admission.</p>
+          </div>
+
+        </div>
+      </div>
+    </div><!-- /page-registration -->
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span class="footer-logo" aria-hidden="true"></span>
+          <p class="footer-location">Madeira, Portugal</p>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer.nav_title">Navigation</h4>
+          <ul>
+            <li><button data-page="home"         data-i18n="nav.home">Home</button></li>
+            <li><button data-page="programme"        data-i18n="nav.events">Programme</button></li>
+            <li><button data-page="regulations"   data-i18n="nav.regulations">Regulations</button></li>
+            <li><button data-page="contacts"      data-i18n="nav.contacts">Contacts</button></li>
+            <li><button data-page="registration"  data-i18n="nav.register">Register</button></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer.contact_title">Contact</h4>
+          <p><a href="mailto:festivaldexadrezdofunchal@gmail.com">festivaldexadrezdofunchal@gmail.com</a></p>
+          <p>Madeira, Portugal</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p data-i18n="footer.copy">&copy; 2026 Funchal Chess Open. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
