@@ -23,7 +23,7 @@
   --color-ash:             #cecac8;
 
   /* Type families */
-  --font-mono:  'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --font-sans:  'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
   --font-serif: 'Source Serif 4', ui-serif, Georgia, Cambria, 'Times New Roman', serif;
 
   /* Type scale */
@@ -115,7 +115,7 @@ html {
 body {
   background-color: var(--color-parchment);
   color: var(--color-off-black);
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   font-size: var(--text-body);
   font-weight: 400;
   line-height: 1.55;
@@ -198,7 +198,7 @@ button {
   padding: 14px 32px;
   border-radius: var(--radius-pill);
   border: 1px solid transparent;
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   font-size: var(--text-body-sm);
   font-weight: 500;
   letter-spacing: -0.02em;
@@ -214,7 +214,6 @@ button {
   background: var(--color-lake-blue);
   color: #fff;
 }
-.btn-primary::after { content: '▸'; font-size: 0.9em; }
 .btn-primary:hover { background: #2449ad; }
 
 .btn-dark {
@@ -1033,7 +1032,7 @@ button {
 }
 
 .footer-col h4 {
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   font-size: var(--text-caption);
   font-weight: 500;
   letter-spacing: 0.08em;
