@@ -814,6 +814,11 @@ button {
   font-size: var(--text-heading-sm);
   margin-bottom: 12px;
 }
+.regs-downloads h3 {
+  font-size: var(--text-body-sm);
+  font-weight: 500;
+  margin: var(--spacing-24) 0 12px;
+}
 .regs-downloads > p {
   font-size: var(--text-body-sm);
   margin-bottom: var(--spacing-24);

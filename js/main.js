@@ -98,6 +98,8 @@ const translations = {
 
     "regs.title":    "Regulations",
     "regs.dl_title":    "Download Regulations",
+    "regs.open_group":  "Funchal Chess Open",
+    "regs.u1900_group": "Funchal Chess Open U1900",
 
     "contacts.title":    "Contacts",
     "contacts.subtitle": "Get in touch with the organising team",
@@ -236,6 +238,8 @@ const translations = {
 
     "regs.title":    "Regulamentos",
     "regs.dl_title":    "Descarregar Regulamentos",
+    "regs.open_group":  "Open de Xadrez do Funchal",
+    "regs.u1900_group": "Open de Xadrez do Funchal Sub1900",
 
     "contacts.title":    "Contactos",
     "contacts.subtitle": "Entre em contacto com a equipa organizadora",
